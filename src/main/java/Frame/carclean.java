@@ -18,6 +18,7 @@ public class carclean extends javax.swing.JFrame {
     public carclean() {
         initComponents();
     }
+    
     DefaultTableModel model = new DefaultTableModel();
 
     /**
@@ -162,6 +163,11 @@ public class carclean extends javax.swing.JFrame {
         });
 
         jButton2.setText("Print");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -413,6 +419,12 @@ public class carclean extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void sales(){
+        String carno = txtno.getText();
+        String total = txttot.getText();
+        String pay = txtpay.getText();
+        String bal = txtbal.getText();
+        
+        
         
     }
     
@@ -560,6 +572,21 @@ public class carclean extends javax.swing.JFrame {
     private void txtnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        int pay = Integer.parseInt(txtpay.getText());
+        int total = Integer.parseInt(txttot.getText());
+        
+        
+        int bal = pay - total;
+        txtbal.setText(String.valueOf(bal)); 
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
